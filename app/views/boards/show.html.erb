@@ -5,3 +5,8 @@
 
 <%= link_to "Delete #{@board.name}?", @board, method: :delete%>
 <%= link_to "Update #{@board.name}?", edit_board_path(@board)%>
+<%= link_to "New List", new_board_list_path(@board)%>
+
+<% @board.lists.each do |list|%>
+  <%= list.board_id %>
+<% end %>
