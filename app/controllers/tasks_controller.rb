@@ -6,7 +6,6 @@ class TasksController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -22,9 +21,7 @@ class TasksController < ApplicationController
     end
   end
 
-
   def edit
-
   end
 
   def update

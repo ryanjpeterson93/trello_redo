@@ -11,10 +11,11 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
+    render partial: 'board'
   end
 
   def edit
-
+    render partial: 'board'
   end
 
   def create

@@ -1,2 +1,11 @@
 <h1>Boards#index</h1>
 <p>Find me in app/views/boards/index.html.erb</p>
+
+<% if @boards.length > 0 %>
+  <% @boards.each do |board|%>
+    <%= link_to  board.name, board %>
+  <% end %>
+<% else %>
+  <%= "No Boards to list"%>
+<% end %>
+<%= link_to "new Board", new_board_path%>
