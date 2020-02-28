@@ -19,18 +19,31 @@ class Task < ApplicationRecord
   end
 
   def self.create_task(p, id)
-    Customer.find_by_sql(["
-      INSERT INTO tasks (priority, name, body)
-      VALUES (:priority, :name, :body);
+    Task.find_by_sql(["
+      INSERT INTO tasks (priority, name, body, created_at, updated_at)
+      VALUES (:priority, :name, :body, :created_at, :updated_at);
     ", {
-      first: p[:first_name],
-      last: p[:last_name],
-      email: p[:email],
-      phone: p[:phone],
-      user_id: id,
+      priority: p[:priority],
+      name: p[:name],
+      body: p[:body],
       created_at: DateTime.now,
       updated_at: DateTime.now
     }])
+  end
+
+  def self.update_task(task_id, p)
+    Task.find_by_sql(["
+      UPDATE tasks AS t
+      SET priority = ?, name = ?, body = ?, updated_at = ?
+      WHERE t.id = ?
+    ;", p[:priority], p[:name], p[:body], DateTime.now, task_id])
+  end
+
+  def self.delete_task(task_id)
+    Task.find_by_sql(["
+      DELETE FROM tasks AS t
+      WHERE t.id = ?
+    ;", task_id])
   end
 
 end

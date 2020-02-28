@@ -9,12 +9,14 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    @task = @list.tasks.new
   end
 
   def create
-    @task = @list.tasks.new(task_params)
-    if @task.save
+    Task.create_task(task_params, @list.id)
+    # @task = @list.tasks.new(task_params)
+    # @task.save
+    if 
       redirect_to list_path(@list)
     else  
       render :new
@@ -25,7 +27,9 @@ class TasksController < ApplicationController
   end
 
   def update
-    if @task.update(task_params)
+    Task.update_task(@task.id, customer_params)
+    # @task.update(task_params)
+    if
       redirect_to list_path(@list)
     else  
       render :edit
@@ -33,14 +37,16 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.destroy
+    Task.delete_task(@task.id)
+    # @task.destroy
     redirect_to list_path(@list)
   end
 
   private
 
     def set_list
-      @list = List.find(params[:list_id])
+      @list = List.single.customer(@list.id, params[:id])
+      # @list = List.find(params[:list_id])
     end
 
     def set_task
