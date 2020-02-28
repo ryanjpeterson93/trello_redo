@@ -31,8 +31,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_214730) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
-    t.string "body"
-    t.string "text"
+    t.text "body"
     t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
