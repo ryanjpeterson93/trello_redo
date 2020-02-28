@@ -1,2 +1,7 @@
 <h1>Boards#show</h1>
 <p>Find me in app/views/boards/show.html.erb</p>
+
+<%= @board.name %>
+
+<%= link_to "Delete #{@board.name}?", @board, method: :delete%>
+<%= link_to "Update #{@board.name}?", edit_board_path(@board)%>

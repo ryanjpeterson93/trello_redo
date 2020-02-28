@@ -1,0 +1,10 @@
+<h1><%= @board.id ? 'Edit Board' : 'Create Board' %></h1>
+<%= link_to  "back to departments", boards_path %>
+<hr />
+<%= form_for [@board] do |f|%>
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name %>
+  </div>
+  <%= f.submit %>
+<% end %>

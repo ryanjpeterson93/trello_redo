@@ -2,11 +2,10 @@ class TasksController < ApplicationController
   before_action :set_list
   before_action :set_task, only: [:show, :destroy, :update, :edit]
   def index
-    @tasks = @list.tasks.all
+    @tasks = Task.all_tasks(@list.id)
   end
 
   def show
-
   end
 
   def new
@@ -22,9 +21,7 @@ class TasksController < ApplicationController
     end
   end
 
-
   def edit
-
   end
 
   def update
