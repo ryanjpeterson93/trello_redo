@@ -3,7 +3,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :destroy, :update, :edit]
 
   def index
-    @lists = List.all_lists(@board.id)
+    @lists = @board.lists
   end
 
   def show
@@ -43,7 +43,7 @@ class ListsController < ApplicationController
 
   private
   def set_list
-    @list = board.lists.find(params[:id])
+    @list = List.find(params[:id])
   end
 
   def set_board
