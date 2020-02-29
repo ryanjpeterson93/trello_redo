@@ -1,10 +1,11 @@
 <h1><%= @board.id ? 'Edit Board' : 'Create Board' %></h1>
-<%= link_to  "back to departments", boards_path %>
+<%= link_to  "back to Boards", boards_path %>
 <hr />
-<%= form_for [@board] do |f|%>
-  <div>
+<%= form_for [@board], class: "ui form" do |f|%>
+  <div class = "field">
+  
     <%= f.label :name%>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true%>
   </div>
-  <%= f.submit %>
+  <%= f.submit nil, class: "ui button" %>
 <% end %>
