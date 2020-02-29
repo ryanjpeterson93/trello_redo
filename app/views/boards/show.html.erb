@@ -9,5 +9,8 @@
 
 <% @board.lists.each do |list|%>
   <p><%= list.name %></p>
+  <p>List ID<%= list.id %></p>
+  <p>Board ID<%= list.board.id %></p>
+
   <%= link_to "Add Task", new_list_task_path(list)%>
 <% end %>
