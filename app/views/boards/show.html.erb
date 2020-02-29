@@ -1,7 +1,7 @@
-<h1>Boards#show</h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<h1>Boards</h1>
 
-<%= @board.name %>
+
+<%= @board.name %><br/>
 
 <%= link_to "Delete #{@board.name}?", @board, method: :delete%>
 <%= link_to "Update #{@board.name}?", edit_board_path(@board)%>
@@ -9,4 +9,5 @@
 
 <% @board.lists.each do |list|%>
   <p><%= list.name %></p>
+  <%= link_to "Add Task", new_list_task_path(list)%>
 <% end %>

@@ -17,7 +17,7 @@ class TasksController < ApplicationController
     # @task = @list.tasks.new(task_params)
     # @task.save
     if 
-      redirect_to list_path(@list)
+      redirect_to board_path(@list.board_id)
     else  
       render :new
     end
@@ -45,15 +45,15 @@ class TasksController < ApplicationController
   private
 
     def set_list
-      @list = List.single.tesk(@list.id, params[:id])
+      @list = List.find(params[:list_id])
       # @list = List.find(params[:list_id])
     end
 
     def set_task
-      @task = @list.tasks.find(params[:id])
+      @task = Task.single_task(@list.id, params[:id])
     end
 
     def task_params
-      params.require(:task).permit(:name, :body, :priority)
+      params.require(:task).permit(:priority, :name, :body)
     end
 end
