@@ -20,12 +20,13 @@ class Task < ApplicationRecord
 
   def self.create_task(p, id)
     Task.find_by_sql(["
-      INSERT INTO tasks (priority, name, body, created_at, updated_at)
-      VALUES (:priority, :name, :body, :created_at, :updated_at);
-    ", {
+      INSERT INTO tasks (priority, name, body, list_id, created_at, updated_at)
+      VALUES (:priority, :name, :body, :list_id, :created_at, :updated_at);
+    ",{
       priority: p[:priority],
       name: p[:name],
       body: p[:body],
+      list_id: id,
       created_at: DateTime.now,
       updated_at: DateTime.now
     }])
