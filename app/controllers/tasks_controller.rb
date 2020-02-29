@@ -45,7 +45,7 @@ class TasksController < ApplicationController
   private
 
     def set_list
-      @list = List.single.customer(@list.id, params[:id])
+      @list = List.single.tesk(@list.id, params[:id])
       # @list = List.find(params[:list_id])
     end
 
