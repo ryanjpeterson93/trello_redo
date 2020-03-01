@@ -2,10 +2,10 @@
 
 
 <h1>Click an List To View It</h1>
-<%= link_to 'Add List', new_board_List_path(@board) %>
+<%= link_to 'Add List', new_board_list_path(@board) %>
 <ul>
-  <% @Lists.each do |List| %>
-    <li><%= link_to List.name, [@board, List] %></li>
+  <% @lists.each do |list| %>
+    <li><%= link_to List.name, [@board, list] %></li>
   <% end %>
 </ul>
 

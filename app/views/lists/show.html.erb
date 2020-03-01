@@ -1,6 +1,14 @@
 <h1><%= @board.name %></h1>
 <h4>Name: <%= @list.name %></h4>
 <br />
+<h2>tasks</h2>
+<% @list.tasks.each do |task| %>
+  <%= render 'tasks/form', { task: task } %>
+<% end %>
+<br />
+<%= link_to 'Add task', new_list_task_path(@list), class: "ui button blue" %>
+<br />
+<br />
 <%= link_to 'Edit list', edit_board_list_path([@board, @list]) %> |
 <%= link_to 'Delete list', [@board, @list], method: :delete %> |
 <%= link_to 'Back To lists', board_lists_path(@board) %>
