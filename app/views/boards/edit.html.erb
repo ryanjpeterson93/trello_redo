@@ -1,2 +1,6 @@
-<h1>Boards#edit</h1>
-<p>Find me in app/views/boards/edit.html.erb</p>
+<h1>Edit board</h1>
+
+<%= render "form", board: @board %>
+
+<%= link_to "Show", board_path(@board) %> |
+<%= link_to "Back", boards_path %>

@@ -1,3 +1,6 @@
-<h1>Lists#show</h1>
-
-
+<h1><%= @board.name %></h1>
+<h4>Name: <%= @list.name %></h4>
+<br />
+<%= link_to 'Edit list', edit_board_list_path([@board, @list]) %> |
+<%= link_to 'Delete list', [@board, @list], method: :delete %> |
+<%= link_to 'Back To lists', board_lists_path(@board) %>

@@ -1,3 +1,11 @@
 <h1>Lists#index</h1>
 
 
+<h1>Click an List To View It</h1>
+<%= link_to 'Add List', new_board_List_path(@board) %>
+<ul>
+  <% @Lists.each do |List| %>
+    <li><%= link_to List.name, [@board, List] %></li>
+  <% end %>
+</ul>
+
