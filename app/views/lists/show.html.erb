@@ -1,11 +1,1 @@
 <h1>Lists#show</h1>
-
-<% @list.tasks.each do |task| %>
-  <li>
-    <%= task.name %>
-  </li>
-    <%= form_for @list do |f| %>
-    <%= f.collection_select :list_id, Task.all, :id, :name %>
-    <%= f.submit %>
-<% end %>
-<% end %>
