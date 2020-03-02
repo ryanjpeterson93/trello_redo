@@ -1,2 +1,13 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<h1><%= @board.name %></h1>
+<h4>Name: <%= @list.name %></h4>
+<br />
+<h2>tasks</h2>
+<% @list.tasks.each do |task| %>
+  <%= render 'tasks/form', { task: task } %>
+<% end %>
+<br />
+<%= link_to 'Add task', new_list_task_path(@list), class: "ui button blue" %>
+<br />
+<br />
+<%= link_to 'Edit list', edit_zoo_list_path([@zoo, @list]) %> |
+<%= link_to 'Delete list', [@zoo, @list], method: :delete %> |
