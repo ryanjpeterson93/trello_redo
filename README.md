@@ -1,24 +1,21 @@
-# README
+# Rails - Trello Remake
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Assignment given as part of the DevPoint Labs Full Stack Web Development Course
 
-Things you may want to cover:
+#### Week 3
 
-* Ruby version
+Basic Objectives
 
-* System dependencies
+-Create a new rails app and make sure you make it a git repo and have a GitHub repo linked to it
 
-* Configuration
+-Board Model - (chores board, work board, etc...) 
 
-* Database creation
+-List Model (multiple lists per board)
 
-* Database initialization
+-Task Model (multiple tasks per list, can move up and down a list, can move from list to list)
 
-* How to run the test suite
+-All CRUD actions for each model
 
-* Services (job queues, cache servers, search engines, etc.)
+-Write all SELECT queries for all CRUD actions
 
-* Deployment instructions
-
-* ...
+-Be able to order lists and tasks
